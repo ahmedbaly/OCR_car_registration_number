@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.example.ahmed.blank_project"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation 'com.android.support:cardview-v7:23.4.0'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:support-v4:25.2.0'
+    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.android.gms:play-services-vision:11.0.4'
+
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'org.apache.james:apache-mime4j:0.6'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation('org.apache.httpcomponents:httpmime:4.1-beta1') {
+        exclude module: "httpcore"
+    }
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+//    api('com.weiwangcn.betterspinner:library-material:1.1.0') {
+//        exclude group: 'com.rengwuxian.materialedittext', module: 'library'
+//    }
+}
